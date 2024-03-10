@@ -63,14 +63,14 @@ const DashboardLayout = () => {
 	const { onToggleMode } = useSettings();
 
 	return (
-		<>
+		<Stack direction="row">
 			<Box
 				p={2}
 				sx={{
 					backgroundColor: theme.palette.background.paper,
 					boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
 					height: "100vh",
-					width: "100px"
+					width: 100,
 				}}>
 
 				<Stack
@@ -87,7 +87,10 @@ const DashboardLayout = () => {
 							width: 64,
 							borderRadius: 1.5
 						}}>
-							<img src={Logo} alt={"Yet Logo"} />
+							<img
+								src={Logo}
+								alt="Yet Logo"
+							/>
 						</Box>
 						<Stack sx={{ width: "max-content" }} direction="column" alignItems="center" spacing={3}>
 							{Nav_Buttons.map((el) => (
@@ -154,7 +157,7 @@ const DashboardLayout = () => {
 				</Stack>
 			</Box >
 			<Outlet />
-		</>
+		</Stack >
 	);
 };
 
