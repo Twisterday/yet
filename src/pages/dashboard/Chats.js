@@ -4,7 +4,7 @@ import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
 import { ChatList } from "../../data";
-import { SimpleBarStyle } from "../../components/Scrollbar";
+// import { SimpleBarStyle } from "../../components/Scrollbar";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
 	'& .MuiBadge-badge': {
@@ -153,24 +153,22 @@ const Chats = () => {
 					<Divider />
 				</Stack>
 				<Stack spacing={2} direction="column" sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
-					<SimpleBarStyle timeout={500} clickOnTrack={false}>
-						<Stack spacing={2.5}>
-							<Typography variant="subtitle2" sx={{ color: "#676767" }}>
-								Pinned
-							</Typography>
-							{ChatList.filter((el) => el.pinned).map((el) => {
-								return <ChatElement {...el} />
-							})}
-						</Stack>
-						<Stack spacing={2.5}>
-							<Typography variant="subtitle2" sx={{ color: "#676767" }}>
-								All Chats
-							</Typography>
-							{ChatList.filter((el) => !el.pinned).map((el) => {
-								return <ChatElement {...el} />
-							})}
-						</Stack>
-					</SimpleBarStyle>
+					<Stack spacing={2.5}>
+						<Typography variant="subtitle2" sx={{ color: "#676767" }}>
+							Pinned
+						</Typography>
+						{ChatList.filter((el) => el.pinned).map((el) => {
+							return <ChatElement {...el} />
+						})}
+					</Stack>
+					<Stack spacing={2.5}>
+						<Typography variant="subtitle2" sx={{ color: "#676767" }}>
+							All Chats
+						</Typography>
+						{ChatList.filter((el) => !el.pinned).map((el) => {
+							return <ChatElement {...el} />
+						})}
+					</Stack>
 				</Stack>
 			</Stack>
 		</Box >
