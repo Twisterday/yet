@@ -152,7 +152,21 @@ const Chats = () => {
 					</Stack>
 					<Divider />
 				</Stack>
-				<Stack spacing={2} direction="column" sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
+				<Stack spacing={2} direction="column" sx={{
+					flexGrow: 1,
+					overflowY: 'auto',
+					height: '100%',
+					'&::-webkit-scrollbar': {
+						width: '8px',
+					},
+					'&::-webkit-scrollbar-thumb': {
+						backgroundColor: 'transparent',
+						borderRadius: '8px',
+					},
+					'&::-webkit-scrollbar-track': {
+						backgroundColor: 'transparent',
+					},
+				}}>
 					<Stack spacing={2.5}>
 						<Typography variant="subtitle2" sx={{ color: "#676767" }}>
 							Pinned
