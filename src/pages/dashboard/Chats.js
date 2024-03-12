@@ -4,7 +4,6 @@ import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
 import { ChatList } from "../../data";
-// import { SimpleBarStyle } from "../../components/Scrollbar";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
 	'& .MuiBadge-badge': {
@@ -43,6 +42,7 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
 			height: 75,
 			borderRadius: 1,
 			backgroundColor: theme.palette.mode === "light" ? "#fff" : theme.palette.background.default,
+			boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
 		}}
 			p={2}
 		>
