@@ -7,7 +7,7 @@ const DocMsg = ({ el }) => {
 	const theme = useTheme();
 	return (
 		<Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content" }}>
+			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)" }}>
 				<Stack spacing={2}>
 					<Stack p={2} direction="row" spacing={3} alignItems="center" sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 1 }}>
 						<Image size={48} />
@@ -27,7 +27,7 @@ const LinkMsg = ({ el }) => {
 	const theme = useTheme();
 	return (
 		<Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-			<Box sx={{ backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, borderRadius: 1.5, width: "max-content" }}>
+			<Box sx={{ backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)" }}>
 				<Stack spacing={2}>
 					<Stack p={2} spacing={3} sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 1 }}>
 						<img src={el.preview} alt={el.message} style={{ maxHeight: 210, borderRadius: "10px" }} />
@@ -53,7 +53,7 @@ const ReplyMsg = ({ el }) => {
 	const theme = useTheme();
 	return (
 		<Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", }}>
+			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)" }}>
 				<Stack spacing={2}>
 					<Stack p={2} direction="column" spacing={3} alignItems="center" sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 1 }}>
 						<Typography variant="body2" color={theme.palette.text}>
@@ -73,7 +73,7 @@ const MediaMsg = ({ el }) => {
 	const theme = useTheme();
 	return (
 		<Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content" }}>
+			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)" }}>
 				<Stack spacing={1}>
 					<img src={el.img} alt={el.message} style={{ maxHeight: 210, borderRadius: "10px" }} />
 					<Typography variant="body2" color={el.incoming ? theme.palette.text : "#fff"}>
@@ -89,7 +89,7 @@ const TextMsg = ({ el }) => {
 	const theme = useTheme();
 	return (
 		<Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", }}>
+			<Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.paper : theme.palette.primary.main, borderRadius: 1.5, width: "max-content", boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)" }}>
 				<Typography variant="body2" color={el.incoming ? theme.palette.text : "#fff"}>
 					{el.message}
 				</Typography>
