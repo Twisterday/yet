@@ -1,7 +1,7 @@
 import { useTheme, styled } from "@mui/material/styles";
 import { Box, IconButton, InputAdornment, Stack, TextField } from "@mui/material";
 import { PaperPlaneTilt, Paperclip, SmileyWink, } from "phosphor-react";
-import React from "react";
+import React, { useState } from "react";
 
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
@@ -13,7 +13,7 @@ const StyledInput = styled(TextField)(({ theme }) => ({
 	},
 }));
 
-const ChatInput = () => {
+const ChatInput = ({ setOpenPicker }) => {
 	return (
 		<StyledInput fullWidth placeholder="Message..." variant="filled" InputProps={{
 			disableUnderline: true,
@@ -23,7 +23,9 @@ const ChatInput = () => {
 				</IconButton>
 			</InputAdornment>,
 			endAdornment: <InputAdornment>
-				<IconButton>
+				<IconButton onClick={() => {
+					setOpenPicker((prev) => !prev);
+				}}>
 					<SmileyWink />
 				</IconButton>
 			</InputAdornment>
@@ -33,6 +35,7 @@ const ChatInput = () => {
 
 const Footer = () => {
 	const theme = useTheme();
+	const [openPicker, setOpenPicker] = useState(false);
 	return (
 		< Box
 			p={2}
@@ -44,10 +47,10 @@ const Footer = () => {
 			<Stack direction="row" alignItems={"center"} spacing={3}>
 				<Stack sx={{ width: "100%" }}>
 					{/* ChatInput */}
-					<Box sx={{ zIndex: 10, position: "fixed", bottom: 81, right: 100п }}>
+					<Box sx={{ display: openPicker ? "inline" : "none", zIndex: 10, position: "fixed", bottom: 81, right: 100 }}>
 						<Picker theme={theme.palette.mode} data={data} onEmojiSelect={console.log} />
 					</Box>
-					<ChatInput />
+					<ChatInput setOpenPicker={setOpenPicker} />
 				</Stack>
 
 				<Box sx={{ height: 48, width: 48, backgroundColor: theme.palette.primary.main, borderRadius: 1.5 }}>
