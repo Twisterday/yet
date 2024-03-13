@@ -56,15 +56,16 @@ const Actions = [
 ];
 
 const ChatInput = ({ setOpenPicker }) => {
+	const [openActions, setOpenActions] = useState(false);
 	return (
 		<StyledInput fullWidth placeholder="Message..." variant="filled" InputProps={{
 			disableUnderline: true,
 			startAdornment: (
 				<Stack sx={{ width: "max-content" }}>
-					<Stack sx={{ position: "relative", }}>
+					<Stack sx={{ position: "relative", display: openActions ? "inline-block" : "none" }}>
 						{Actions.map((el) => (
-							<Tooltip title={el.title}>
-								<Fab sx={{ position: "absolute", top: -el.y, backgroundColor: el.color }}>
+							<Tooltip placement="right" title={el.title}>
+								<Fab sx={{ position: "absolute", top: -el.y, backgroundColor: "primary" }}>
 									{el.icon}
 								</Fab>
 							</Tooltip>
@@ -72,7 +73,9 @@ const ChatInput = ({ setOpenPicker }) => {
 					</Stack>
 					<InputAdornment>
 						<IconButton>
-							<Paperclip />
+							<Paperclip onClick={() => {
+								setOpenActions((prev) => !prev);
+							}} />
 						</IconButton>
 					</InputAdornment>
 				</Stack >),
