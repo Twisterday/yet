@@ -28,3 +28,16 @@ const slice = createSlice({
 export default slice.reducer;
 
 //
+export function ToggleSideBar() {
+	return async () => {
+		dispatch(slice.actions.toggleSideBar());
+	}
+}
+export function UpdateSidebarType(type) {
+	return async () => {
+		dispatch(slice.actions.updateSidebarType({
+			type,
+		})
+		);
+	};
+}
